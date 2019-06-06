@@ -1,0 +1,4 @@
+version,title,ID,begin_date
+int,string,int,datetime
+123345,"hoge",1,"2019-01-01T00:00:00+09:00"
+123345,"fuga",2,"2019-01-02T00:00:00+09:00"
