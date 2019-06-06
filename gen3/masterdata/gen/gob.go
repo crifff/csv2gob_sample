@@ -10,15 +10,11 @@ import (
 )
 
 var MasterList = map[string]interface{}{
-	"Foo": masterdata.FooList,
+	"Foo": &masterdata.FooList,
 }
 
 var LoaderList = map[string]func([]byte) error{
 	"Foo": masterdata.LoadFooList,
-}
-
-var GetterList = map[string]func() interface{}{
-	"Foo": masterdata.GetFooList,
 }
 
 func main() {
@@ -36,7 +32,7 @@ func main() {
 			panic(err)
 		}
 		enc := gob.NewEncoder(file)
-		if err := enc.Encode(GetterList[i]()); err != nil {
+		if err := enc.Encode(MasterList[i]); err != nil {
 			panic(err)
 		}
 	}

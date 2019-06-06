@@ -22,7 +22,3 @@ func LoadFooList(raw []byte) error {
 	}
 	return nil
 }
-
-func GetFooList() interface{} {
-	return FooList
-}
